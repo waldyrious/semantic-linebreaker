@@ -32,6 +32,8 @@
       }
       function breakPhrases() {
         textarea = document.getElementById("textbox");
+        // clean up previous runs
+        textarea.value = textarea.value.replace(/^(.{0,72})◀/gm, "$1");
         // break on conjunctions
         textarea.value = textarea.value.replace(/(.{20,}?) (or|and|but|that|e(\. ?)?g\.?|i(\. ?)?e\.?) /g, "$1\n$2 ");
         // break on punctuation
@@ -49,10 +51,9 @@
       semantic linebreaks</a>:
     </p>
     <form>
-      <textarea id="textbox" onpaste='capturePaste();' autofocus></textarea>
+      <textarea id="textbox" onpaste='capturePaste();' onkeyup='breakPhrases();' autofocus></textarea>
       <br>
       <input type="reset" value="clear">
-      <button onclick="breakPhrases(); return false;">reparse</button>
     </form>
   </body>
 </html>

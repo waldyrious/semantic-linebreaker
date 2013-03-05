@@ -32,8 +32,7 @@
       }
       function convert() {
         textarea = document.getElementById("textbox");
-        textarea.value = textarea.value.replace(/, /g, ",\n");
-        textarea.value = textarea.value.replace(/\. /g, ",\n");
+        textarea.value = textarea.value.replace(/(,|\.|:|;| or| and| but) /g, "$1\n");
       }
     </script>
   </head>

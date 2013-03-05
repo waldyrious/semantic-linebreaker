@@ -37,7 +37,7 @@
         // break on punctuation
         textarea.value = textarea.value.replace(/(.{20,}?)([,.?!][”"]?|[:;]) /g, "$1$2\n");
         // mark too long lines, if there are any left
-        textarea.value = textarea.value.replace(/(.{72,}?[^¶]) /g, "$1¶ ");
+        textarea.value = textarea.value.replace(/([^¶]{72,}?) /g, "$1¶ ");
       }
     </script>
   </head>

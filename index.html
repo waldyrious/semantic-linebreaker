@@ -33,7 +33,7 @@
       function convert() {
         textarea = document.getElementById("textbox");
         textarea.value = textarea.value.replace(/(.{20,}?) (or|and|but|e(\. ?)?g\.?|i(\. ?)?e\.?) /g, "$1\n$2 ");
-        textarea.value = textarea.value.replace(/(.{20,}?)([,.?!][”"]?|[:;])  /g, "$1$2\n");
+        textarea.value = textarea.value.replace(/(.{20,}?)([,.?!][”"]?|[:;]) /g, "$1$2\n");
       }
     </script>
   </head>

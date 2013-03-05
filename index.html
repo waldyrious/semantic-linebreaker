@@ -28,24 +28,31 @@
     </style>
     <script>
       function capturePaste() { 
-        // http://stackoverflow.com/q/2176861/266309
+        // http://stackoverflow.com/q/2176861/
         setTimeout(breakPhrases, 1);
       }
       function breakPhrases() {
         var textArea = document.getElementById("textbox");
+        // http://stackoverflow.com/q/4698560/
         var scrollTop = textArea.scrollTop;
+        // http://stackoverflow.com/q/4698560/
+        var selStart = textArea.selectionStart;
+        var selEnd = textArea.selectionEnd;
         var manualMode = document.getElementById("manual-mode");
         // clean up previous runs
         textArea.value = textArea.value.replace(/^(.{0,72})◀/gm, "$1");
-        // don't do anything else if we're editing in manual mode
-        if(manualMode.checked ) return;
-        // break on conjunctions
-        textArea.value = textArea.value.replace(/(.{20,}?) (or|and|but|that|e(\. ?)?g\.?|i(\. ?)?e\.?) /g, "$1\n$2 ");
-        // break on punctuation
-        textArea.value = textArea.value.replace(/(.{20,}?)([,.?!][”"]?|[:;]) /g, "$1$2\n");
-        // mark too long lines, if there are any left
-        textArea.value = textArea.value.replace(/^([^◀\n]{72,}?)(?!◀) /gm, "$1◀ ");
+        // don't do any parsing if we're editing in manual mode
+        if( !manualMode.checked ) {
+          // break on conjunctions
+          textArea.value = textArea.value.replace(/(.{20,}?) (or|and|but|that|e(\. ?)?g\.?|i(\. ?)?e\.?) /g, "$1\n$2 ");
+          // break on punctuation
+          textArea.value = textArea.value.replace(/(.{20,}?)([,.?!][”"]?|[:;]) /g, "$1$2\n");
+          // mark too long lines, if there are any left
+          textArea.value = textArea.value.replace(/^([^◀\n]{72,}?)(?!◀) /gm, "$1◀ ");
+        }
         textArea.scrollTop = scrollTop;
+        textArea.selectionStart = selStart;
+        textArea.selectionEnd = selEnd;
       }
     </script>
   </head>

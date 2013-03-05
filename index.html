@@ -28,12 +28,16 @@
     <script>
       function capturePaste() { 
         // http://stackoverflow.com/q/2176861/266309
-        setTimeout(convert, 1);
+        setTimeout(breakPhrases, 1);
       }
-      function convert() {
+      function breakPhrases() {
         textarea = document.getElementById("textbox");
+        // break on conjunctions
         textarea.value = textarea.value.replace(/(.{20,}?) (or|and|but|e(\. ?)?g\.?|i(\. ?)?e\.?) /g, "$1\n$2 ");
+        // break on punctuation
         textarea.value = textarea.value.replace(/(.{20,}?)([,.?!][”"]?|[:;]) /g, "$1$2\n");
+        // mark too long lines, if there are any left
+        textarea.value = textarea.value.replace(/(.{72,}?) /g, "$1&para; ");
       }
     </script>
   </head>

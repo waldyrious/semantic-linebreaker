@@ -12,4 +12,5 @@ as in merely adds line-breaks indiscriminately
 after a few punctuation marks (.,:;!?)
 and before some conjunctions (but, and, or...).
 Better heuristics are evidently needed.
-Pull requests or issue reports are welcome!
+Check the [wiki](../wiki/) for some potentially useful reesources.
+Pull requests, issue reports or wiki edits are welcome!

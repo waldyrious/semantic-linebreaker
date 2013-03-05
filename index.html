@@ -32,8 +32,11 @@
       }
       function breakPhrases() {
         textarea = document.getElementById("textbox");
+        manualMode = document.getElementById("manual-mode");
         // clean up previous runs
         textarea.value = textarea.value.replace(/^(.{0,72})◀/gm, "$1");
+        // don't do anything else if we're editing in manual mode
+        if(manualMode.checked ) return;
         // break on conjunctions
         textarea.value = textarea.value.replace(/(.{20,}?) (or|and|but|that|e(\. ?)?g\.?|i(\. ?)?e\.?) /g, "$1\n$2 ");
         // break on punctuation
@@ -54,6 +57,8 @@
       <textarea id="textbox" onpaste='capturePaste();' onkeyup='breakPhrases();' autofocus></textarea>
       <br>
       <input type="reset" value="clear">
+      <input id="manual-mode" type="checkbox" value="manual">
+      <label for="manual-mode">Manual mode</label>  
     </form>
   </body>
 </html>

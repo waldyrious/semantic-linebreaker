@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Semantic Libebreaker</title>
+    <meta charset="utf-8">
+    <style>
+      html {
+        height: 100%;
+      }
+      #textbox {
+        height: 80%;
+        width: 90%;
+        margin-bottom: 1.5em;
+        clear: both;
+      }
+      form {
+        text-align: center;
+      }
+    </style>
+    <script>
+      function capturePaste() { 
+        // http://stackoverflow.com/q/2176861/266309
+        setTimeout(convert, 1);
+      }
+      function convert() {
+        textarea = document.getElementById("textbox");
+        textarea.value = textarea.value.replace(/, /g, ",\n");
+        textarea.value = textarea.value.replace(/\. /g, ",\n");
+      }
+    </script>
+  </head>
+  <body>
+    <p>
+      Paste your text below
+      to have it automatically formatted
+      using <a href="http://rhodesmill.org/brandon/2012/one-sentence-per-line/">
+      semantic linebreaks</a>:
+    </p>
+    <form>
+      <textarea id="textbox" onpaste='capturePaste();'></textarea>
+      <br>
+      <input type="reset" value="clear">
+    </form>
+  </body>
+</html>

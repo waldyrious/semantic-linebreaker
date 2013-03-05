@@ -33,7 +33,7 @@
       function breakPhrases() {
         textarea = document.getElementById("textbox");
         // break on conjunctions
-        textarea.value = textarea.value.replace(/(.{20,}?) (or|and|but|e(\. ?)?g\.?|i(\. ?)?e\.?) /g, "$1\n$2 ");
+        textarea.value = textarea.value.replace(/(.{20,}?) (or|and|but|that|e(\. ?)?g\.?|i(\. ?)?e\.?) /g, "$1\n$2 ");
         // break on punctuation
         textarea.value = textarea.value.replace(/(.{20,}?)([,.?!][”"]?|[:;]) /g, "$1$2\n");
         // mark too long lines, if there are any left
@@ -52,7 +52,7 @@
       <textarea id="textbox" onpaste='capturePaste();' autofocus></textarea>
       <br>
       <input type="reset" value="clear">
-      <button onclick="breakPhrases()">reparse</button>
+      <button onclick="breakPhrases(); return false;">reparse</button>
     </form>
   </body>
 </html>

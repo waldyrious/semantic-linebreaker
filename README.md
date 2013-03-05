@@ -9,6 +9,6 @@ Try it here: http://waldir.github.com/semantic-linebreaker
 Currently it's a pretty much useless,
 as in merely adds line-breaks indiscriminately
 after a few punctuation marks (.,:;!?)
-and before some conjunctions (but, or, and...)
+and before some conjunctions (but, and, or...).
 Better heuristics are evidently needed.
 Pull requests are welcome!

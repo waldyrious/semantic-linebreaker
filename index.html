@@ -33,7 +33,7 @@
       function convert() {
         textarea = document.getElementById("textbox");
         textarea.value = textarea.value.replace(/(,|\.|:|;) /g, "$1\n");
-        textarea.value = textarea.value.replace(/ (or|and|but)/g, "\n$1");
+        textarea.value = textarea.value.replace(/ (or|and|but) /g, "\n$1 ");
       }
     </script>
   </head>

@@ -32,18 +32,20 @@
         setTimeout(breakPhrases, 1);
       }
       function breakPhrases() {
-        textarea = document.getElementById("textbox");
-        manualMode = document.getElementById("manual-mode");
+        var textArea = document.getElementById("textbox");
+        var scrollTop = textArea.scrollTop;
+        var manualMode = document.getElementById("manual-mode");
         // clean up previous runs
-        textarea.value = textarea.value.replace(/^(.{0,72})◀/gm, "$1");
+        textArea.value = textArea.value.replace(/^(.{0,72})◀/gm, "$1");
         // don't do anything else if we're editing in manual mode
         if(manualMode.checked ) return;
         // break on conjunctions
-        textarea.value = textarea.value.replace(/(.{20,}?) (or|and|but|that|e(\. ?)?g\.?|i(\. ?)?e\.?) /g, "$1\n$2 ");
+        textArea.value = textArea.value.replace(/(.{20,}?) (or|and|but|that|e(\. ?)?g\.?|i(\. ?)?e\.?) /g, "$1\n$2 ");
         // break on punctuation
-        textarea.value = textarea.value.replace(/(.{20,}?)([,.?!][”"]?|[:;]) /g, "$1$2\n");
+        textArea.value = textArea.value.replace(/(.{20,}?)([,.?!][”"]?|[:;]) /g, "$1$2\n");
         // mark too long lines, if there are any left
-        textarea.value = textarea.value.replace(/^([^◀\n]{72,}?)(?!◀) /gm, "$1◀ ");
+        textArea.value = textArea.value.replace(/^([^◀\n]{72,}?)(?!◀) /gm, "$1◀ ");
+        textArea.scrollTop = scrollTop;
       }
     </script>
   </head>

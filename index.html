@@ -49,9 +49,10 @@
       semantic linebreaks</a>:
     </p>
     <form>
-      <textarea id="textbox" onpaste='capturePaste();'></textarea>
+      <textarea id="textbox" onpaste='capturePaste();' autofocus></textarea>
       <br>
       <input type="reset" value="clear">
+      <button onclick="breakPhrases()">reparse</button>
     </form>
   </body>
 </html>

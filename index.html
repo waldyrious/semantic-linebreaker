@@ -25,6 +25,21 @@
         height: -webkit-calc(100% - 4em);
         height: calc(100% - 4em);
       }
+      #footer {
+        font-size: small;
+        color: grey;
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        padding: 0.2em 0.7em;
+        border-top-right-radius: 1em;
+        background-color: white;
+        box-shadow: -1px -1px 5px 3px rgba(0, 0, 0, 0.3);
+        transform: rotate(-90deg) translateX(100%);
+        transform-origin: right bottom;
+        -webkit-transform: rotate(-90deg) translateX(100%);
+        -webkit-transform-origin: right bottom;
+        }
     </style>
     <script>
       function capturePaste() { 
@@ -70,5 +85,8 @@
       <input id="manual-mode" type="checkbox" value="manual">
       <label for="manual-mode">Manual mode</label>  
     </form>
+    <a id='footer' href='https://github.com/waldir/semantic-linebreaker'>
+      source code on github
+    </a>
   </body>
 </html>

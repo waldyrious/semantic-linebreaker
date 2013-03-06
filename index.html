@@ -3,6 +3,7 @@
   <head>
     <title>Semantic Linebreaker</title>
     <meta charset="utf-8">
+    <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
     <style>
       html {
         height: 100%;
@@ -10,14 +11,20 @@
       body {
         height: -webkit-calc(100% - 2em);
         height: calc(100% - 2em);
+        font-family: 'Roboto', sans-serif;
+        background-color: LightSlateGray;
+        color: Gainsboro;
       }
       #textbox {
         height: -webkit-calc(100% - 5em);
         height: calc(100% - 5em);
         width: 90%;
         margin-bottom: 1.5em;
-        clear: both;
         line-height: 1.3em;
+        padding: 0.5em;
+        border: 2px solid #abc;
+        border-radius: 10px;
+        box-shadow: 0 0 5px 1px inset;
       }
       form {
         text-align: center;
@@ -27,7 +34,6 @@
       }
       #footer {
         font-size: small;
-        color: grey;
         position: fixed;
         bottom: 0;
         right: 0;
@@ -39,7 +45,13 @@
         transform-origin: right bottom;
         -webkit-transform: rotate(-90deg) translateX(100%);
         -webkit-transform-origin: right bottom;
-        }
+      }
+      #footer a {
+        text-decoration: none;
+      }
+      p {
+        padding: 0 1em;
+      }
     </style>
     <script>
       function capturePaste() { 

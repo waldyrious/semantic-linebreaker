@@ -3,7 +3,7 @@
   <head>
     <title>Semantic Linebreaker</title>
     <meta charset="utf-8">
-    <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto">
     <link rel="stylesheet" href="style.css">
     <script src="actions.js"></script>
   </head>
@@ -15,13 +15,13 @@
       semantic linebreaks</a>:
     </p>
     <form>
-      <textarea id="textbox" onpaste='capturePaste();' onkeyup='breakPhrases();' autofocus></textarea>
+      <textarea id="textbox" onpaste="capturePaste();" onkeyup="breakPhrases();" autofocus></textarea>
       <br>
       <input type="reset" value="clear">
       <input id="manual-mode" type="checkbox" value="manual">
       <label for="manual-mode">Manual mode</label>  
     </form>
-    <a id='footer' href='https://github.com/waldir/semantic-linebreaker'>
+    <a id="footer" href="https://github.com/waldir/semantic-linebreaker">
       source code on github
     </a>
   </body>

@@ -1,8 +1,3 @@
-function capturePaste() { 
-  // http://stackoverflow.com/q/2176861/
-  setTimeout(breakPhrases, 1);
-}
-
 function breakPhrases() {
   var textArea = document.getElementById("textbox");
   // http://stackoverflow.com/q/4698560/
@@ -28,3 +23,6 @@ function breakPhrases() {
   textArea.selectionStart = selStart;
   textArea.selectionEnd = selEnd;
 }
+
+// http://stackoverflow.com/q/2176861/, http://stackoverflow.com/q/546905/
+document.getElementById('text_area').onpaste = setTimeout(breakPhrases, 1);

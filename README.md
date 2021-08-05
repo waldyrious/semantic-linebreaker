@@ -5,7 +5,7 @@ A utility to help you apply
 [semantic linebreaks](http://rhodesmill.org/brandon/2012/one-sentence-per-line/)
 to any text.
 
-Try it here: **http://waldyrious.github.com/semantic-linebreaker**
+Try it here: **http://waldyrious.github.io/semantic-linebreaker**
 
 Currently it's simply a dumb pattern-replacement tool,
 as in merely adds line-breaks indiscriminately
